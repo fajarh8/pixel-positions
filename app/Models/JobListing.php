@@ -9,6 +9,14 @@ class JobListing extends Model
 {
     /** @use HasFactory<\Database\Factories\JobListingFactory> */
     use HasFactory;
+    protected $fillable = [
+        "title",
+        "salary",
+        "location",
+        "schedule",
+        "url",
+        "featured",
+    ];
 
     public function employer(){
         return $this->belongsTo(Employer::class);
