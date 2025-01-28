@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\GoodController;
+use App\Http\Controllers\JobListingController;
+use App\Models\JobListing;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [JobListingController::class,'index']);
 
 Route::controller(GoodController::class)->group( function (){
     Route::get('/good', 'index');

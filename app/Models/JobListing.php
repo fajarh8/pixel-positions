@@ -13,4 +13,14 @@ class JobListing extends Model
     public function employer(){
         return $this->belongsTo(Employer::class);
     }
+
+    public function tag(string $name ){
+        $tag = Tag::firstOrCreate(["name"=> $name]);
+
+        $this->tags()->attach($tag);
+    }
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
+    }
 }

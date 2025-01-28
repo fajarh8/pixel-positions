@@ -2,25 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreJobListingRequest;
-use App\Http\Requests\UpdateJobListingRequest;
-use App\Models\JobListing;
+use App\Http\Requests\StoreTagRequest;
+use App\Http\Requests\UpdateTagRequest;
 use App\Models\Tag;
 
-class JobListingController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $jobs = JobListing::all()->groupBy('featured');
-
-        return view('jobListing.index', [
-            'featuredJobs' => $jobs[0],
-            'jobs'=> $jobs[1],
-            'tags' => Tag::all()
-        ]);
+        //
     }
 
     /**
@@ -34,7 +27,7 @@ class JobListingController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreJobListingRequest $request)
+    public function store(StoreTagRequest $request)
     {
         //
     }
@@ -42,7 +35,7 @@ class JobListingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(JobListing $jobListing)
+    public function show(Tag $tag)
     {
         //
     }
@@ -50,7 +43,7 @@ class JobListingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(JobListing $jobListing)
+    public function edit(Tag $tag)
     {
         //
     }
@@ -58,7 +51,7 @@ class JobListingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateJobListingRequest $request, JobListing $jobListing)
+    public function update(UpdateTagRequest $request, Tag $tag)
     {
         //
     }
@@ -66,7 +59,7 @@ class JobListingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(JobListing $jobListing)
+    public function destroy(Tag $tag)
     {
         //
     }
